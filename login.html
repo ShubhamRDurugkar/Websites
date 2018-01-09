@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Page</title>
+<script>
+	function validateLogin() {
+		var username = document.getElementById("username").value;
+		var password = document.getElementById("password").value;
+		if (username == "" || password == "") {
+			alert("Fields should not be empty");
+		} else if (username == "shubham" && password == "asdf") {
+			alert("Login Successfully");
+			window.location = "product1.html";
+			return false;
+		} else {
+			alert("Enter the valid details");
+		}
+
+	}
+</script>
+</head>
+<body bgcolor="LightBlue">
+<div class="container">
+	<header>
+			<h1 align="center">Login Page</h1>
+	</header>
+
+	<form id="login" method="post" name="login">
+		<br>
+		<table>
+			<tr>
+				<td><label>User Name :</label></td>
+			</tr>
+			<tr>
+				<td><input type="text" name="username" id="username" /></td>
+			</tr>
+			<tr>
+				<td><label>Password : </label></td>
+			</tr>
+			<tr>
+				<td><input type="password" name="password" id="password" /></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="Login" id="submit"
+					onclick="validateLogin()" /></td>
+			</tr>
+		</table>
+	</form>
+		<footer>
+		<p>
+			&copy; copyrights niit.com
+		</p>
+	</footer>
+	</div>
+</body>
+</html>

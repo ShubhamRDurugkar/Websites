@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Product</title>
+<link rel="stylesheet" href="css\\websitecss.css"/>
+</head>
+<script type="text/javascript">
+	function getDetails(){
+		var locate = window.location;
+		document.product.fields.value = locate;
+		var text = document.product.fields.value;
+	
+		var id=getProductId(text);
+		var name=getProductName(text,theleft);
+		var price=getProductPrice(text,theleft);
+		var quantity=getProductQuantity(text);
+		
+		document.getElementById("p_id").innerHTML=id;
+		document.getElementById("p_name").innerHTML=name;
+		document.getElementById("p_price").innerHTML=price;
+		document.getElementById("p_quantity").innerHTML=quantity;
+		
+	}
+	function getProductId(str)
+	{
+		alert
+		theleft = str.indexOf("=") + 1;
+		theright = str.indexOf("&&");
+	return(str.substring(theleft, theright));
+	}
+	function getProductName(str,startIndex){
+		alert
+		theleft = str.indexOf("=",startIndex) + 1;  
+		theright = str.indexOf("&&",theleft);
+		return(str.substring(theleft, theright));
+	}
+	function getProductPrice(str,startIndex){
+		alert
+		theleft = str.indexOf("=",startIndex) + 1;  
+		theright = str.indexOf("&&",theleft);
+		return(str.substring(theleft, theright));
+	}
+	function getProductQuantity(str){
+		alert
+		theleft = str.lastIndexOf("=")+1 ;  
+		return(str.substring(theleft,str.length));
+	}
+	
+</script>
+<body onload="getDetails()" bgcolor="LightBlue">
+<h1 align="center">Product Details</h1>
+	<div class="container">
+		<header>
+			<a href="login.html">LOGIN </a>
+	</header>
+	
+		<section class="section">
+		<form NAME="product">
+			<INPUT TYPE="hidden" NAME="fields">
+		</form>
+	
+				<table>
+					<tr>
+						<td>Product Id : </td>
+						<td>
+							<div id="p_id"></div>
+						</td>
+					</tr>
+					<tr>
+						<td>Product Name : </td>
+						<td><div id="p_name"></div></td>
+					</tr>
+					<tr>
+						<td>Product Price : </td>
+						<td><div id="p_price"></div></td>
+					</tr>
+					<tr>
+						<td>Product Quantity : </td>
+						<td><div id="p_quantity"></div></td>
+					</tr>
+				</table>
+	 	
+		</section>
+		
+		
+	
+	<footer>
+		<p>
+			&copy; copyrights niit.com
+		</p>
+	</footer>
+	</div>
+</body>
+</html>
